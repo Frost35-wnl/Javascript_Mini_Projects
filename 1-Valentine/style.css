@@ -1,0 +1,77 @@
+/*General*/
+
+:root{
+    --background : #FAFBF8;
+    --pink : #EB6565;
+    --green : #76E45C;
+    --text : #f38c8c;
+    color-scheme: light only;
+}
+
+body{
+    background-color: var(--background);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.message{
+    font-size: clamp(1rem, calc(5vw + 0.1rem),3rem);
+    font-weight: bold;
+    margin: 1em 0;
+    color: var(--text);
+    font-family: 'Montserrat';
+}
+
+
+/*Answer*/
+.answer{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3em;
+}
+
+.button{
+    background-color:#EB6565;
+    font-size: clamp(0.5rem, calc(5vw + 0.1rem),2rem);
+    padding: 0.5em 1em;
+    border-radius: 0.2em;
+    color: var(--background);
+    border: none;
+    cursor:pointer;
+    top: 0;
+    transition: all cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s;
+}
+
+/* .button:hover {
+    position: relative;
+    top : -0.5em;
+} */
+
+.yes{
+    background-color: var(--green);
+}
+
+.no{
+    background-color: var(--pink);
+}
+
+
+/*image*/
+img{
+    display: block;
+    width: clamp(100px,40vw, 15em);
+    aspect-ratio: 4/3;
+    object-fit:contain;
+    margin: 0 auto;
+}
+
+@media (hover:hover){
+    .button:hover{
+        position: relative;
+        top : -0.5em;
+    }
+}
+
