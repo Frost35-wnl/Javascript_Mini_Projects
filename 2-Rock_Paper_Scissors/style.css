@@ -14,28 +14,37 @@
     background-color:antiquewhite;
     margin: auto;
     text-align: center;
-    margin-top: 10em;
-    padding: 10em 5em 3em;
+    margin-top: clamp(5em,2vw,10em);
+    padding-top: clamp(5em, 1vw, 10em);
+    padding-right: clamp(3em, 1vw, 5em);
+    padding-left: clamp(3em, 1vw, 5em);
+    padding-bottom: clamp(1em, 1vw, 3em);
+
     border-radius: 0.5em;
 }
 
 h1
 {
     color:chocolate;
+    font-size: clamp(0.5rem, calc(5vw + 0.1rem),3rem);
 }
 p{
-    font-size: 1em;
+    font-size: 1rem;
+    font-size: clamp(0.7rem, calc(2vw + 0.1rem),1rem);
 }
 .choices
 {
     margin: 4em 0 2em;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1em;
 }
 
 .button
 {
     background-color:brown;
+    font-size: clamp(0.5rem, calc(2vw + 0.1rem),1rem);
     padding: 1em 1.5em;
     color: white;
     border-radius: 0.3em;
@@ -54,12 +63,14 @@ p{
     font-size: 1.2em;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 2em;
+    font-size: clamp(0.5rem, calc(3vw + 0.1rem),2rem);
 }
 
 .score
 {
     display: flex;
     justify-content: space-around;
+    font-size: clamp(0.5rem, calc(3vw + 0.1rem),2rem);
 }
 
 .restart
@@ -74,4 +85,16 @@ p{
     margin: 3em auto 0;
     display: none;
     cursor: pointer;
+}
+
+@media screen and (min-width : 300px) {
+    .score
+    {
+        flex-direction: column;
+    }
+
+    .score > div
+    {
+        margin-top: 1em;
+    }
 }
