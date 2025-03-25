@@ -10,16 +10,16 @@
 .container
 {
     max-width: 1600px;
-    width: 60%;
+    width: 80%;
     background-color:antiquewhite;
     margin: auto;
     text-align: center;
     margin-top: clamp(5em,2vw,10em);
     padding-top: clamp(5em, 1vw, 10em);
-    padding-right: clamp(3em, 1vw, 5em);
-    padding-left: clamp(3em, 1vw, 5em);
-    padding-bottom: clamp(1em, 1vw, 3em);
-
+    padding-right: clamp(2em, 0.5vw, 5em);
+    padding-left: clamp(2em, 0.5vw, 5em);
+    padding-bottom: clamp(3em, 0.5vw, 5em);
+    overflow:hidden;
     border-radius: 0.5em;
 }
 
@@ -81,6 +81,7 @@ p{
     padding: 1em 3em;
     border-radius: 0.5em;
     color: white;
+    font-size: clamp(0.6rem, calc(2vw + 0.1rem),1rem);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     margin: 3em auto 0;
@@ -97,5 +98,10 @@ p{
     .score > div
     {
         margin-top: 1em;
+    }
+
+    .choices
+    {
+        margin-top: 2em;
     }
 }
