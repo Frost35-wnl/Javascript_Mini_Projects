@@ -1,0 +1,77 @@
+*
+{
+    box-sizing: border-box;
+    margin: none;
+}
+:root
+{
+    background-color:brown;
+}
+.container
+{
+    max-width: 1600px;
+    width: 60%;
+    background-color:antiquewhite;
+    margin: auto;
+    text-align: center;
+    margin-top: 10em;
+    padding: 10em 5em 3em;
+    border-radius: 0.5em;
+}
+
+h1
+{
+    color:chocolate;
+}
+p{
+    font-size: 1em;
+}
+.choices
+{
+    margin: 4em 0 2em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button
+{
+    background-color:brown;
+    padding: 1em 1.5em;
+    color: white;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+
+.button:hover
+{
+    position: relative;
+    top: -0.3em;
+}
+
+.answer
+{
+    color: chocolate;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 2em;
+}
+
+.score
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.restart
+{
+    background-color: chocolate;
+    width: fit-content;
+    padding: 1em 3em;
+    border-radius: 0.5em;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    margin: 3em auto 0;
+    display: none;
+    cursor: pointer;
+}

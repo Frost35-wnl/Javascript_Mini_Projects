@@ -1,6 +1,11 @@
-alert("Check the console log");
-
-console.log("Rock Paper Scissors");
+let rockSelection = document.querySelector(".rock");
+let paperSelection = document.querySelector(".paper");
+let scissorsSelection = document.querySelector(".scissors");
+let computerChoiceDisplay = document.querySelector(".computerChoiceDisplay");
+let answer = document.querySelector(".answer");
+let humanScoreDisplay = document.querySelector(".humanScore");
+let computerScoreDisplay = document.querySelector(".computerScore");
+let restartButton = document.querySelector(".restart");
 
 function getComputerChoice(){
     let choice = ["rock", "paper", "scissors"];
@@ -24,48 +29,89 @@ function playGame(){
 
     function playRound (humanChoice, computerChoice){
 
-        console.log('Your choice : ' + humanChoice + '\n' + 'Computer choice : ' + computerChoice + '\n');
+        if(endGame(humanScore, computerScore) == 1) return 1;
+
+        computerChoiceDisplay.textContent = "Computer choice : " + computerChoice;
     
         if (humanChoice == computerChoice) {
-            console.log("No one lose !");  
+            answer.textContent = "No one lose !";
         }
         else if ( humanChoice == 'rock') {
             if (computerChoice == 'paper') {
-                console.log("You lose ! Paper beats Rock");
+                answer.textContent = "You lose ! Paper beats Rock";
                 computerScore++;
             } else {
-                console.log("You win ! Rock beats Scissors ");
+                answer.textContent = "You win ! Rock beats Scissors ";
                 humanScore++;
             }
         }
         else if ( humanChoice == 'paper') {
             if (computerChoice == 'rock') {
-                console.log("You win ! Paper beats Rock");
+                answer.textContent = "You win ! Paper beats Rock";
                 humanScore++;
             } else {
-                console.log("You lose ! Scissors beats Paper");
+                answer.textContent = "You lose ! Scissors beats Paper";
                 computerScore++;
             }
         }
         else if (humanChoice == 'scissors'){
             if (computerChoice == 'paper') {
-                console.log("You win ! Scissors beats Paper");
+                answer.textContent = "You win ! Scissors beats Paper";
                 humanScore++;
             } else {
-                console.log("You lose ! Rock beats Scissors");
+                answer.textContent = "You lose ! Rock beats Scissors";
                 computerScore++;
             }
         }
+
+        computerScoreDisplay.textContent = computerScore;
+        humanScoreDisplay.textContent = humanScore;
+
+        if(endGame(humanScore, computerScore) == 1) return 1;
+
         return 1;
     }
 
-    while(playCount <= 5){
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playCount += playRound(humanSelection, computerSelection);
+    rockSelection.addEventListener('click', () => {
+        let humanChoice = 'rock';
+        let computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+    });
+
+    paperSelection.addEventListener('click', () => {
+        let humanChoice = 'paper';
+        let computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+    });
+
+    scissorsSelection.addEventListener('click', () => {
+        let humanChoice = 'scissors';
+        let computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+    });
+
+    restartButton.addEventListener('click', () => {
+        location.reload();
+    })
+
+
+
+}
+
+function endGame(humanScore, computerScore)
+{
+    if (humanScore == 5) {
+        answer.textContent = "Congrats !!! :)";
+        restartButton.style.display = "block";
+        return 1;
+    }
+    if (computerScore == 5) {
+        answer.textContent = "Game over :(";
+        restartButton.style.display = "block";
+        return 1;
     }
 
-    console.log('\n\nYour score : ' + humanScore + '\n' + 'Computer score : ' + computerScore + '\n');
+    return 0;
 }
 
 playGame();
