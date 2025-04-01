@@ -30,9 +30,9 @@ function createGrid(dimension)
     let opacityDensity = 10; 
 
     for (let index = 1; index <= (dimension * dimension); index++) {
-        let redValue = Math.random()*255;
-        let greenValue = Math.random()*255;
-        let blueValue = Math.random()*255;
+        let redValue = Math.random()*254 + 1;
+        let greenValue = Math.random()*254 + 1;
+        let blueValue = Math.random()*254 + 1;
 
         const div = document.createElement("div");
         div.classList.add("new");

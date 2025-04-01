@@ -18,19 +18,15 @@ button
 .container
 {
     background-color: white;
-    height: 100vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border: 1px solid black;
-    margin: 1em;
-    overflow: hidden;
 }
 
 .new
 {
     width: calc(100vw / var(--user-dimension));
-    height: calc(100vh / var(--user-dimension));
+    height: calc(100vw / var(--user-dimension));
     /*--user-dimension is a CSS variables from Javascript file*/
 }
 
