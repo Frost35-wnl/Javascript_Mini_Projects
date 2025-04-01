@@ -30,3 +30,9 @@ button
     /*--user-dimension is a CSS variables from Javascript file*/
 }
 
+.container > div
+{
+    border-radius: 100%;
+    transition: all 200ms ease-in;
+}
+
