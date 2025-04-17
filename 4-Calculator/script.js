@@ -13,7 +13,7 @@ inputs.forEach(element => {
             screen.textContent = '0';
         }
 
-        if (screen.textContent == 0) {
+        if (screen.textContent == 0 && isFinite(element.textContent)) {
             screen.textContent = element.textContent;
 
             firstNumber = +screen.textContent;
