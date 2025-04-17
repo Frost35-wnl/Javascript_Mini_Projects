@@ -116,7 +116,7 @@ function operate(operator, firstNumber, secondNumber) {
     }
 
     if ((result - Math.trunc(result)) > 0) {
-        result = +(result.toFixed(8));
+        result = +(result.toPrecision(8));
     }
 
     return result ?? "error" ;
