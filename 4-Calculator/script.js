@@ -45,9 +45,6 @@ inputs.forEach(element => {
 
             secondNumber = +screen.textContent;
         }
-        alert(firstNumber);
-        alert(operator);
-        alert(secondNumber);
     })
 });
 
