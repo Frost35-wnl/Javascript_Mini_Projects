@@ -13,7 +13,7 @@ inputs.forEach(element => {
             screen.textContent = '0';
         }
 
-        if (screen.textContent == 0 && isFinite(element.textContent)) {
+        if (screen.textContent === '0' && isFinite(element.textContent)) {
             screen.textContent = element.textContent;
 
             firstNumber = +screen.textContent;
@@ -25,11 +25,11 @@ inputs.forEach(element => {
 
             firstNumber = +screen.textContent;
         }
-        else if(isNaN(element.textContent))
+        else if(isNaN(element.textContent) && isFinite(firstNumber))
         {
             operator = element.textContent;
         }
-        else if(operator === '%')
+        else if(operator === '%' && isFinite(firstNumber))
         {
             screen.textContent = firstNumber;
         }
@@ -39,7 +39,7 @@ inputs.forEach(element => {
 
             secondNumber = +screen.textContent;
         }
-        else 
+        else if(isFinite(firstNumber) && (operator !== undefined) && isFinite(element.textContent) && isFinite(secondNumber))
         {
             screen.textContent = screen.textContent + element.textContent;
 
