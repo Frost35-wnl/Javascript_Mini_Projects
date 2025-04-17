@@ -13,7 +13,7 @@ inputs.forEach(element => {
             screen.textContent = '0';
         }
 
-        if (screen.textContent === '0' && isFinite(element.textContent)) {
+        if (screen.textContent === '0' && isFinite(element.textContent) && isNaN(firstNumber)) {
             screen.textContent = element.textContent;
 
             firstNumber = +screen.textContent;
@@ -45,6 +45,9 @@ inputs.forEach(element => {
 
             secondNumber = +screen.textContent;
         }
+        // alert(firstNumber);
+        // alert(operator);
+        // alert(secondNumber);
     })
 });
 
