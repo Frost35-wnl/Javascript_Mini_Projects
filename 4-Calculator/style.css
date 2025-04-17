@@ -6,7 +6,9 @@
 
 .container
 {
-    border: 0.4em rgb(66, 66, 66) solid;
+    border-color: rgb(66, 66, 66);
+    border-style: solid;
+    border-width: clamp(0.1em, 1vw + 00.1em, 0.4em);
     border-radius: 0.3em;
     width: 50%;
     margin: 5em auto;
@@ -19,13 +21,13 @@
     background-color: rgb(197, 197, 197);
     text-align: right;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 3rem;
-    padding: 0.2em;
+    font-size: clamp(0.5rem,1vw + 1.5rem, 3rem);
+    padding: clamp(0.05em,0.1em,0.2em);
 }
 
 .operators
 {
-    margin: 0.5em;
+    margin: clamp(0.1em,1vw,0.4em);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 0.2em;
@@ -35,10 +37,10 @@
 {
     background-color: rgb(0, 159, 170);
     text-align: center;
-    padding: 1em;
+    padding: clamp(0.5em,2vw,1em);
     color:beige;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.3rem;
+    font-size: clamp(0.1rem,1vw + 0.2rem,1.3rem);
     cursor: pointer;
     user-select: none;
 }
