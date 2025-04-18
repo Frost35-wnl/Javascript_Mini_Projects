@@ -45,6 +45,7 @@ inputs.forEach(element => {
 
             secondNumber = +screen.textContent;
         }
+        //uncomment for kick test
         // alert(firstNumber);
         // alert(operator);
         // alert(secondNumber);
