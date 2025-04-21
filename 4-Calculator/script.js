@@ -25,7 +25,12 @@ inputs.forEach(element => {
 
             firstNumber = +screen.textContent;
         }
-        else if(isNaN(element.textContent) && isFinite(firstNumber))
+        else if(element.textContent === '.' && operator === undefined)
+        {
+            screen.textContent = screen.textContent + element.textContent;
+            firstNumber = +screen.textContent;
+        }
+        else if(isNaN(element.textContent) && isFinite(firstNumber) && element.textContent !== '.')
         {
             operator = element.textContent;
         }
@@ -44,6 +49,12 @@ inputs.forEach(element => {
             screen.textContent = screen.textContent + element.textContent;
 
             secondNumber = +screen.textContent;
+        }
+        else if (element.textContent === '.' && operator !== undefined  )
+        {
+                screen.textContent = screen.textContent + element.textContent;
+    
+                secondNumber = +screen.textContent;
         }
         //uncomment for kick test
         // alert(firstNumber);
