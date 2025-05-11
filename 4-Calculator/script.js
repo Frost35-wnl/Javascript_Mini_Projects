@@ -13,7 +13,7 @@ inputs.forEach(element => {
             screen.textContent = '0';
         }
 
-        if (screen.textContent == 0) {
+        if (screen.textContent === '0' && isFinite(element.textContent) && isNaN(firstNumber)) {
             screen.textContent = element.textContent;
 
             firstNumber = +screen.textContent;
@@ -25,11 +25,16 @@ inputs.forEach(element => {
 
             firstNumber = +screen.textContent;
         }
-        else if(isNaN(element.textContent))
+        else if(element.textContent === '.' && operator === undefined)
+        {
+            screen.textContent = screen.textContent + element.textContent;
+            firstNumber = +screen.textContent;
+        }
+        else if(isNaN(element.textContent) && isFinite(firstNumber) && element.textContent !== '.')
         {
             operator = element.textContent;
         }
-        else if(operator === '%')
+        else if(operator === '%' && isFinite(firstNumber))
         {
             screen.textContent = firstNumber;
         }
@@ -39,12 +44,22 @@ inputs.forEach(element => {
 
             secondNumber = +screen.textContent;
         }
-        else 
+        else if(isFinite(firstNumber) && (operator !== undefined) && isFinite(element.textContent) && isFinite(secondNumber))
         {
             screen.textContent = screen.textContent + element.textContent;
 
             secondNumber = +screen.textContent;
         }
+        else if (element.textContent === '.' && operator !== undefined  )
+        {
+                screen.textContent = screen.textContent + element.textContent;
+    
+                secondNumber = +screen.textContent;
+        }
+        //uncomment for kick test
+        // alert(firstNumber);
+        // alert(operator);
+        // alert(secondNumber);
     })
 });
 
@@ -116,7 +131,7 @@ function operate(operator, firstNumber, secondNumber) {
     }
 
     if ((result - Math.trunc(result)) > 0) {
-        result = +(result.toFixed(8));
+        result = +(result.toPrecision(10));
     }
 
     return result ?? "error" ;
