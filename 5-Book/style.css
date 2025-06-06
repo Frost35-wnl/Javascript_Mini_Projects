@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light only;
+    background-color: white;
+    font-family: "Arial";
+}
+
+::backdrop {
+    background-color: black;
+    opacity: 0.2;
+}
+
+#newBook {
+    user-select: none;
+    position: sticky;
+    bottom: 20vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    width: fit-content;
+    background-color: #209af7;
+    font-weight: 700;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+}
+
+dialog {
+    margin: auto;
+    border: none;
+    border-radius: 1rem;
+}
+
+dialog button,
+.delete-button {
+    user-select: none;
+    color: white;
+    background-color: #209af7;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    padding: 0.5em;
+    width: fit-content;
+}
+
+form {
+    padding: 2em 4em;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+}
+
+form .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#library {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 2em;
+    padding: 5em 0;
+}
+
+.book-card {
+    background-color: white;
+    padding: 4em;
+    border-radius: 1em;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: min(2em);
+}
+
+.change-status-button {
+    user-select: none;
+    color: dimgrey;
+    background-color: white;
+    border: dimgrey solid 2px;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    padding: 0.5em;
+    width: fit-content;
+}
+
+.change-status-button:hover,
+.change-status-button:active {
+    background-color: dimgray;
+    color: white;
+}
