@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Book Library</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div id="library"></div>
+        <div id="newBook">NEW BOOK</div>
+        <dialog>
+            <form>
+                <div>
+                    <label for="name">Name : </label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+                <div>
+                    <label for="author">Author : </label>
+                    <input type="text" id="author" name="author" required />
+                </div>
+                <div>
+                    <label for="pages">Pages : </label>
+                    <input
+                        type="number"
+                        min="0"
+                        id="pages"
+                        name="pages"
+                        required
+                    />
+                </div>
+                <fieldset>
+                    <legend>Did you read this ?</legend>
+                    <div>
+                        <input
+                            type="radio"
+                            id="read-true"
+                            name="read-state"
+                            value="true"
+                        />
+                        <label for="read-true">Yes</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            id="read-false"
+                            name="read-state"
+                            value="false"
+                        />
+                        <label for="read-false">Nope</label>
+                    </div>
+                </fieldset>
+                <div class="buttons">
+                    <button formmethod="dialog" value="cancel">Cancel</button>
+                    <button id="confirmBtn" value="default">Confirm</button>
+                </div>
+            </form>
+        </dialog>
+    </body>
+</html>
